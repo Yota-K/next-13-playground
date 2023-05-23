@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import styles from '../page.module.css';
+import { Counter } from '~/components/Counter';
+import styles from '~/app/page.module.css';
 
 export default function Sample() {
   return (
     <main className={styles.main}>
-      <p>sample</p>
+      <Counter />
     </main>
   );
 }
