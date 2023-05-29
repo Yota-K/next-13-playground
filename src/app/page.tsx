@@ -10,11 +10,6 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
-        <p>
-          <Link href="/sample" style={{ color: '#fff' }}>
-            sample
-          </Link>
-        </p>
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -80,6 +75,19 @@ export default function Home() {
           <p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
         </a>
       </div>
+      <h2 className={styles.heading}>Link</h2>
+      <ul className={styles.links}>
+        <li>
+          <Link href="/sample" style={{ color: '#fff' }}>
+            sample
+          </Link>
+        </li>
+        <li>
+          <Link href="/ssr-streaming" style={{ color: '#fff' }}>
+            ssr-streaming
+          </Link>
+        </li>
+      </ul>
     </main>
   );
 }
