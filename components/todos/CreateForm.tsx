@@ -1,25 +1,18 @@
-import { revalidatePath } from 'next/cache';
-import { PrismaClient } from '@prisma/client';
+'use client';
 
-const prisma = new PrismaClient();
+import { useRef } from 'react';
+import { addTodo } from '~/actions/todoActions';
 
 export function CreateForm() {
-  const addTodo = async (data: FormData) => {
-    'use server';
-    console.log(data);
+  const formRef = useRef<HTMLFormElement>(null);
 
-    const name = data.get('name') as string;
-
-    try {
-      await prisma.todo.create({ data: { name } });
-      revalidatePath('/todos');
-    } catch (er) {
-      console.error(er);
-    }
+  const add = async (data: FormData) => {
+    await addTodo(data);
+    if (formRef.current) formRef.current.reset();
   };
 
   return (
-    <form action={addTodo}>
+    <form action={add} ref={formRef}>
       <label htmlFor="name">Name:</label>
       <input type="text" name="name" />
       <button type="submit">Add Todo</button>
