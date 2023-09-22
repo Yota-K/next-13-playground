@@ -1,22 +1,20 @@
 import { Heading } from '@kuma-ui/core';
-import { PrismaClient } from '@prisma/client';
+import { Suspense } from 'react';
 import { CreateForm } from '~/components/todos/CreateForm';
+import { Todos } from '~/components/todos/Todos';
 
-const prisma = new PrismaClient();
+const Loading = () => <div>Loading...</div>;
 
 export default async function Page() {
-  const todos = await prisma.todo.findMany();
-
   return (
     <>
       <Heading as="h2">投稿作成</Heading>
       <CreateForm />
       <Heading as="h2">投稿一覧</Heading>
-      <div>
-        {todos.map((todo) => (
-          <div key={todo.id}>{todo.name}</div>
-        ))}
-      </div>
+      <Suspense fallback={<Loading />}>
+        {/* @ts-expect-error Server Component */}
+        <Todos />
+      </Suspense>
     </>
   );
 }
