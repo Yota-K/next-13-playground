@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:migrate-dev": "prisma migrate dev",
+    "prisma:studio": "npx prisma studio"
   },
   "dependencies": {
     "@kuma-ui/core": "^1.1.0",
