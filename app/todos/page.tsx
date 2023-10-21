@@ -1,6 +1,6 @@
 import { Heading } from '@kuma-ui/core';
 import { PrismaClient } from '@prisma/client';
-import { CreateForm } from '~/components/todos/CreateForm';
+import { CreateForm } from './_components/CreateForm';
 
 const prisma = new PrismaClient();
 

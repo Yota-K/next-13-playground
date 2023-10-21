@@ -1,7 +1,7 @@
 import { Heading } from '@kuma-ui/core';
 import { Suspense } from 'react';
-import { CreateForm } from '~/components/todos/CreateForm';
-import { Todos } from '~/components/todos/Todos';
+import { CreateForm } from '../_components/CreateForm';
+import { Todos } from '../_components/Todos';
 
 const Loading = () => <div>Loading...</div>;
 
