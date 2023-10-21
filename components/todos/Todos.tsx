@@ -7,8 +7,6 @@ export async function Todos() {
   const data = await fetch(`http://localhost:3000/api/todos`, { cache: 'no-store' });
   const todos = (await data.json()) as Todo[];
 
-  console.log(todos);
-
   return (
     <div>
       {todos.map((todo) => (
