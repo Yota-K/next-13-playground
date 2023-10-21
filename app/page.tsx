@@ -21,6 +21,11 @@ export default function Home() {
               todos pattern2（SSR Streaming使ってtodo取ってきてるパターン）
             </Link>
           </li>
+          <li>
+            <Link href="/infinity-scroll" style={{ color: '#fff' }}>
+              server actionsを使用した無限スクロール
+            </Link>
+          </li>
         </ul>
       </li>
     </ul>
