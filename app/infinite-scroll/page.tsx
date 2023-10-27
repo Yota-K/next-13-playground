@@ -15,6 +15,7 @@ async function fetchItems(page = 0) {
 
 export default async function Page() {
   const items = await fetchItems();
+  console.log(items);
 
   return <Items initialItems={items} fetchItems={fetchItems} />;
 }

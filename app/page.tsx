@@ -22,7 +22,7 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <Link href="/infinity-scroll" style={{ color: '#fff' }}>
+            <Link href="/infinite-scroll" style={{ color: '#fff' }}>
               server actionsを使用した無限スクロール
             </Link>
           </li>
